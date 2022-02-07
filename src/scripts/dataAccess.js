@@ -7,6 +7,13 @@ const applicationState = {
 const API = "http://localhost:8088"
 const mainContainer = document.querySelector("#container")
 
+export const dateSort = ((a, b) => {
+    const date1 = new Date(a)
+    const date2 = new Date(b)
+
+    return date2 - date1
+})
+
 export const fetchRequests = () => {
     return fetch(`${API}/requests`)
         .then(response => response.json())
